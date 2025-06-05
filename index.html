@@ -245,9 +245,404 @@
             border-color: var(--luxury-gold);
         }
 
+        		.package-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .package-image.refresh {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/audiRefreshPackage.jpg');
+        }
+
+        .package-image.standard {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/standardPackageImage.jpg');
+        }
+
+        .package-image.ultimate {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/UltimatePackagePhoto.jpg');
+        }
+
+        .package-image.monthly {
+            background: linear-gradient(rgba(212,175,55,0.3), rgba(0,0,0,0.4)), 
+                        url('images/UltimatePackagePhoto.jpg');
+        }
+
+        /* Gallery Images - Using CSS Art */
+        .gallery-item {
+            height: 300px;
+            background: linear-gradient(135deg, var(--luxury-gray), var(--luxury-charcoal));
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:nth-child(1) {
+            background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+        }
+
+        .gallery-item:nth-child(1)::before {
+            content: 'Hand Washing';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .gallery-item:nth-child(2) {
+            background: linear-gradient(135deg, #1a1a1a, #333, #1a1a1a);
+        }
+
+        .gallery-item:nth-child(2)::before {
+            content: 'Paint Polishing';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .gallery-item:nth-child(3) {
+            background: linear-gradient(135deg, #000, #d4af37, #000);
+        }
+
+        .gallery-item:nth-child(3)::before {
+            content: 'Ceramic Coating';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .gallery-item:nth-child(4) {
+            background: linear-gradient(135deg, #34495e, #2c3e50, #34495e);
+        }
+
+        .gallery-item:nth-child(4)::before {
+            content: 'Interior Detailing';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .gallery-item:nth-child(5) {
+            background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+        }
+
+        .gallery-item:nth-child(5)::before {
+            content: 'Paint Correction';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 3;
+        }
+
+        .gallery-item:nth-child(6) {
+            background: linear-gradient(135deg, #d4af37, #f4e4a6, #d4af37);
+        }
+
+        .gallery-item:nth-child(6)::before {
+            content: 'Full Service Detail';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #d4af37;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 3;
+        }igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKK<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZHS Detail - Premium Mobile Auto Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --luxury-black: #0a0a0a;
+            --luxury-charcoal: #1a1a1a;
+            --luxury-gray: #2a2a2a;
+            --luxury-gold: #d4af37;
+            --luxury-gold-dark: #b8941f;
+            --luxury-gold-accent: #f4e4a6;
+            --text-luxury-white: #ffffff;
+            --text-luxury-medium: #cccccc;
+            --text-luxury-muted: #999999;
+            --glass-luxury: rgba(255, 255, 255, 0.05);
+            --glass-luxury-border: rgba(255, 255, 255, 0.1);
+            --shadow-luxury: rgba(212, 175, 55, 0.3);
+            --shadow-deep: rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--luxury-black);
+            color: var(--text-luxury-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--luxury-gray);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--luxury-gold);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-luxury-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--luxury-gold);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            color: var(--luxury-black);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-luxury);
+        }
+
+        /* Enhanced Hero Section with Background Image */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="carPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="%23000"/><path d="M20 100 Q60 80 100 100 Q140 120 180 100" stroke="%23d4af37" stroke-width="2" fill="none" opacity="0.3"/><circle cx="50" cy="120" r="3" fill="%23d4af37" opacity="0.5"/><circle cx="150" cy="80" r="2" fill="%23d4af37" opacity="0.4"/></pattern></defs><rect width="1200" height="800" fill="url(%23carPattern)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(212, 175, 55, 0.1) 50%, transparent 100%);
+            animation: shimmer 8s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-luxury-medium);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--luxury-gold);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-luxury-medium);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Enhanced Services Section with Images */
+        .services {
+            padding: 8rem 0;
+            background: var(--luxury-charcoal);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--luxury-gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-luxury-medium);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .package {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .package:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px var(--shadow-deep);
+            border-color: var(--luxury-gold);
+        }
+
         .package-image {
             height: 250px;
-            background: linear-gradient(45deg, var(--luxury-gray), var(--luxury-charcoal));
             position: relative;
             overflow: hidden;
             background-size: cover;
@@ -255,67 +650,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 15px 15px 0 0;
         }
 
         .package-image.refresh {
-			background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/refresh.jpg');
-			background-size: cover;
-			background-position: center;
-		}
-
-        .package-image.refresh::before {
-            content: '';
-            position: absolute;
-            width: 120px;
-            height: 60px;
-            background: #d4af37;
-            border-radius: 50px 50px 20px 20px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -70%);
-            opacity: 0.8;
-        }
-
-        .package-image.refresh::after {
-            content: '🚗';
-            position: absolute;
-            font-size: 4rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.9;
+            background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><defs><radialGradient id="shine" cx="50%" cy="30%"><stop offset="0%" style="stop-color:white;stop-opacity:0.8"/><stop offset="100%" style="stop-color:white;stop-opacity:0"/></radialGradient></defs><rect width="400" height="250" fill="%23304050"/><ellipse cx="200" cy="125" rx="160" ry="70" fill="%23d4af37" opacity="0.2"/><rect x="80" y="90" width="240" height="70" rx="35" fill="%23555" opacity="0.9"/><circle cx="140" cy="180" r="20" fill="%23222"/><circle cx="260" cy="180" r="20" fill="%23222"/><circle cx="140" cy="180" r="12" fill="%23d4af37"/><circle cx="260" cy="180" r="12" fill="%23d4af37"/><rect x="110" y="105" width="180" height="40" rx="5" fill="%23333" opacity="0.8"/><ellipse cx="200" cy="80" rx="80" ry="20" fill="url(%23shine)"/><text x="200" y="130" text-anchor="middle" fill="%23d4af37" font-family="Arial" font-size="16" font-weight="bold">WASH &amp; DETAIL</text></svg>');
         }
 
         .package-image.standard {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
-        }
-
-        .package-image.standard::before {
-            content: '';
-            position: absolute;
-            width: 140px;
-            height: 70px;
-            background: linear-gradient(45deg, #d4af37, #f4e4a6);
-            border-radius: 60px 60px 25px 25px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -70%);
-            opacity: 0.7;
-        }
-
-        .package-image.standard::after {
-            content: '✨';
-            position: absolute;
-            font-size: 3rem;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.9;
+            background: linear-gradient(135deg, #1a1a1a, #333, #1a1a1a);
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><defs><radialGradient id="polish" cx="50%" cy="40%"><stop offset="0%" style="stop-color:%23d4af37;stop-opacity:0.8"/><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:0"/></radialGradient></defs><rect width="400" height="250" fill="%23202020"/><ellipse cx="200" cy="125" rx="170" ry="80" fill="%23d4af37" opacity="0.15"/><path d="M60 100 Q200 70 340 100 L340 150 Q200 120 60 150 Z" fill="%23444" opacity="0.9"/><circle cx="130" cy="185" r="22" fill="%23111"/><circle cx="270" cy="185" r="22" fill="%23111"/><circle cx="130" cy="185" r="14" fill="%23d4af37"/><circle cx="270" cy="185" r="14" fill="%23d4af37"/><rect x="90" y="95" width="220" height="45" rx="8" fill="%23222" opacity="0.9"/><ellipse cx="200" cy="70" rx="100" ry="25" fill="url(%23polish)"/><path d="M150 110 Q200 100 250 110" stroke="%23d4af37" stroke-width="3" fill="none" opacity="0.7"/><text x="200" y="130" text-anchor="middle" fill="%23d4af37" font-family="Arial" font-size="14" font-weight="bold">POLISH &amp; PROTECT</text></svg>');
         }
 
         .package-image.ultimate {
-            background: linear-gradient(135deg, #000 0%, #d4af37 20%, #000 40%, #d4af37 60%, #000 100%);
-            animation: luxuryShine 3s infinite;
+            background: linear-gradient(135deg, #000, #d4af37, #000, #d4af37, #000);
+            background-size: 300% 300%;
+            animation: luxuryShine 4s ease-in-out infinite;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><defs><radialGradient id="ceramic" cx="50%" cy="30%"><stop offset="0%" style="stop-color:%23fff;stop-opacity:0.9"/><stop offset="50%" style="stop-color:%23d4af37;stop-opacity:0.6"/><stop offset="100%" style="stop-color:%23000;stop-opacity:0.2"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="3"/><feColorMatrix values="1 0 0 0 0.83 0 1 0 0 0.69 0 0 1 0 0.22 0 0 0 1 0"/></filter></defs><rect width="400" height="250" fill="%23111"/><ellipse cx="200" cy="125" rx="180" ry="85" fill="%23d4af37" opacity="0.3"/><path d="M50 110 Q200 60 350 110 L350 140 Q200 90 50 140 Z" fill="%23333" opacity="0.95"/><circle cx="125" cy="190" r="25" fill="%23000"/><circle cx="275" cy="190" r="25" fill="%23000"/><circle cx="125" cy="190" r="16" fill="%23d4af37"/><circle cx="275" cy="190" r="16" fill="%23d4af37"/><rect x="75" y="90" width="250" height="50" rx="12" fill="%23000" opacity="0.8"/><ellipse cx="200" cy="60" rx="120" ry="30" fill="url(%23ceramic)" filter="url(%23glow)"/><polygon points="200,45 210,55 200,60 190,55" fill="%23d4af37" opacity="0.9"/><text x="200" y="125" text-anchor="middle" fill="%23d4af37" font-family="Arial" font-size="12" font-weight="bold">CERAMIC COATING</text></svg>');
         }
 
         @keyframes luxuryShine {
@@ -323,64 +675,9 @@
             50% { background-position: 100% 50%; }
         }
 
-        .package-image.ultimate::before {
-            content: '';
-            position: absolute;
-            width: 160px;
-            height: 80px;
-            background: linear-gradient(45deg, #d4af37, #fff);
-            border-radius: 70px 70px 30px 30px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -70%);
-            opacity: 0.6;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-        }
-
-        .package-image.ultimate::after {
-            content: '👑';
-            position: absolute;
-            font-size: 4rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.9;
-        }
-
         .package-image.monthly {
-            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 50%, #d4af37 100%);
-        }
-
-        .package-image.monthly::before {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 50px;
-            background: #2c3e50;
-            border-radius: 40px 40px 15px 15px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -70%);
-            opacity: 0.8;
-        }
-
-        .package-image.monthly::after {
-            content: '📅';
-            position: absolute;
-            font-size: 3rem;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.9;
-        }
-
-        /* Add visual depth and shine effects */
-        .package-image::before {
-            z-index: 1;
-        }
-
-        .package-image::after {
-            z-index: 2;
+            background: linear-gradient(135deg, #d4af37, #f4e4a6, #d4af37);
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><defs><linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23f4e4a6;stop-opacity:1"/><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:1"/></linearGradient></defs><rect width="400" height="250" fill="url(%23gold)"/><ellipse cx="200" cy="125" rx="150" ry="70" fill="%23fff" opacity="0.2"/><rect x="70" y="95" width="260" height="60" rx="30" fill="%23333" opacity="0.8"/><circle cx="140" cy="185" r="20" fill="%23000" opacity="0.7"/><circle cx="260" cy="185" r="20" fill="%23000" opacity="0.7"/><circle cx="140" cy="185" r="12" fill="%23d4af37"/><circle cx="260" cy="185" r="12" fill="%23d4af37"/><rect x="100" y="110" width="200" height="30" rx="5" fill="%23000" opacity="0.6"/><circle cx="200" cy="65" r="12" fill="%23000" opacity="0.8"/><rect x="190" y="75" width="20" height="15" fill="%23000" opacity="0.6"/><text x="200" y="130" text-anchor="middle" fill="%23000" font-family="Arial" font-size="12" font-weight="bold">MONTHLY CARE</text></svg>');
         }+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=');
         }
 
