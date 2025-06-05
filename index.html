@@ -105,15 +105,16 @@
             box-shadow: 0 8px 25px var(--shadow-luxury);
         }
 
-        /* Enhanced Hero Section with Background Image */
+        /* Enhanced Hero Section with Range Rover Background */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="carPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="%23000"/><path d="M20 100 Q60 80 100 100 Q140 120 180 100" stroke="%23d4af37" stroke-width="2" fill="none" opacity="0.3"/><circle cx="50" cy="120" r="3" fill="%23d4af37" opacity="0.5"/><circle cx="150" cy="80" r="2" fill="%23d4af37" opacity="0.4"/></pattern></defs><rect width="1200" height="800" fill="url(%23carPattern)"/></svg>');
+            background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.6)), 
+                        url('Image7_RangeRover_Interior.jpeg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             position: relative;
             overflow: hidden;
         }
@@ -196,7 +197,7 @@
             letter-spacing: 2px;
         }
 
-        /* Enhanced Services Section with Images */
+        /* Enhanced Services Section with Real Images */
         .services {
             padding: 8rem 0;
             background: var(--luxury-charcoal);
@@ -245,7 +246,6 @@
             border-color: var(--luxury-gold);
         }
 
-        /* CLEAN PACKAGE IMAGE CSS - ONLY IMAGES, NO CSS GRAPHICS */
         .package-image {
             height: 250px;
             position: relative;
@@ -255,36 +255,33 @@
             background-position: center;
         }
 
-		.package-image.refresh {
-			background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-						url('images/refresh.jpeg');
-			background-size: cover;
-			background-position: center center;
-		}
+        .package-image.refresh {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('Image3_RollsRoyce_Interior.jpeg');
+            background-size: cover;
+            background-position: center center;
+        }
 
         .package-image.standard {
-			background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-						url('images/standardPackageImage.jpg');
-			background-size: contain;
-			background-position: center center;
-			background-repeat: no-repeat;
-		}
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('Image1_Porsche_Interior.jpeg');
+            background-size: cover;
+            background-position: center center;
+        }
 
-		.package-image.ultimate {
-			background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-						url('images/UltimatePackagePhoto.jpg');
-			background-size: contain;
-			background-position: center center;
-			background-repeat: no-repeat;
-		}
+        .package-image.ultimate {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('Image5_Ferrari_Interior.jpeg');
+            background-size: cover;
+            background-position: center center;
+        }
 
-		.package-image.monthly {
-			background: linear-gradient(rgba(212,175,55,0.3), rgba(0,0,0,0.4)), 
-						url('images/UltimatePackagePhoto.jpg');
-			background-size: contain;
-			background-position: center center;
-			background-repeat: no-repeat;
-		}
+        .package-image.monthly {
+            background: linear-gradient(rgba(212,175,55,0.3), rgba(0,0,0,0.4)), 
+                        url('Image6_Mercedes_G_Wagon.jpeg');
+            background-size: cover;
+            background-position: center center;
+        }
 
         .package-content {
             padding: 3rem;
@@ -351,7 +348,7 @@
             box-shadow: 0 8px 25px var(--shadow-luxury);
         }
 
-        /* Gallery Section */
+        /* Enhanced Gallery Section with Real Images */
         .gallery {
             padding: 8rem 0;
             background: var(--luxury-black);
@@ -359,19 +356,21 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
             margin-top: 4rem;
         }
 
         .gallery-item {
             height: 300px;
-            background: linear-gradient(45deg, var(--luxury-gray), var(--luxury-charcoal));
+            background: var(--luxury-gray);
             border-radius: 15px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
+            background-size: cover;
+            background-position: center;
         }
 
         .gallery-item:hover {
@@ -387,19 +386,39 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(45deg, 
-                rgba(212, 175, 55, 0.2) 0%, 
+                rgba(0, 0, 0, 0.3) 0%, 
                 transparent 50%, 
                 rgba(212, 175, 55, 0.2) 100%);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
 
-        .gallery-item i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            color: var(--luxury-gold);
-            opacity: 0.8;
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item.interior-porsche {
+            background-image: url('Image1_Porsche_Interior.jpeg');
+        }
+
+        .gallery-item.porsche-seats {
+            background-image: url('Image2_Porsche_Seats.jpeg');
+        }
+
+        .gallery-item.rolls-royce {
+            background-image: url('Image3_RollsRoyce_Interior.jpeg');
+        }
+
+        .gallery-item.range-rover {
+            background-image: url('Image4_RangeRover_Seats.jpeg');
+        }
+
+        .gallery-item.ferrari {
+            background-image: url('Image5_Ferrari_Interior.jpeg');
+        }
+
+        .gallery-item.mercedes {
+            background-image: url('Image6_Mercedes_G_Wagon.jpeg');
         }
 
         .gallery-caption {
@@ -407,17 +426,144 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
             color: var(--text-luxury-white);
-            padding: 2rem 1rem 1rem;
+            padding: 3rem 2rem 2rem;
             text-align: center;
             font-weight: 600;
+            transform: translateY(100%);
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            color: var(--luxury-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Lamborghini Showcase Section */
+        .lamborghini-showcase {
+            padding: 10rem 0;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                        url('Image8_LamborghiniWash.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            position: relative;
+        }
+
+        .lamborghini-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem;
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid var(--luxury-gold);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+        }
+
+        .lamborghini-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--luxury-gold);
+            margin-bottom: 2rem;
+        }
+
+        .lamborghini-content p {
+            font-size: 1.3rem;
+            color: var(--text-luxury-medium);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        /* Work Showcase Section */
+        .work-showcase {
+            padding: 8rem 0;
+            background: var(--luxury-charcoal);
+        }
+
+        .work-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .work-category {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .work-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px var(--shadow-deep);
+            border-color: var(--luxury-gold);
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .category-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--luxury-gold);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-image {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .category-image:hover {
+            transform: scale(1.05);
+        }
+
+        .category-image.paint-correction {
+            background-image: url('Image9_PaintCorrection_RedCar.jpeg');
+        }
+
+        .category-image.bmw-detail {
+            background-image: url('Image12_BMW_Detail.jpeg');
+        }
+
+        .category-image.ceramic-before-after {
+            background-image: url('Image10_CeramicCoating_BeforeAfter.jpeg');
+        }
+
+        .category-image.ceramic-process {
+            background-image: url('Image11_CeramicCoating_Process.jpeg');
         }
 
         /* Enhanced Testimonials */
         .testimonials {
             padding: 8rem 0;
-            background: var(--luxury-charcoal);
+            background: var(--luxury-black);
         }
 
         .testimonials-grid {
@@ -489,7 +635,7 @@
         /* Why Choose Us */
         .why-choose {
             padding: 8rem 0;
-            background: var(--luxury-black);
+            background: var(--luxury-charcoal);
         }
 
         .features-grid {
@@ -546,7 +692,7 @@
         /* Contact Section */
         .contact {
             padding: 8rem 0;
-            background: var(--luxury-charcoal);
+            background: var(--luxury-black);
         }
 
         .contact-content {
@@ -634,7 +780,7 @@
 
         /* Footer */
         .footer {
-            background: var(--luxury-black);
+            background: var(--luxury-charcoal);
             border-top: 1px solid var(--luxury-gray);
             padding: 4rem 0 2rem;
             position: relative;
@@ -805,7 +951,8 @@
             .packages-grid,
             .gallery-grid,
             .testimonials-grid,
-            .features-grid {
+            .features-grid,
+            .work-categories {
                 grid-template-columns: 1fr;
             }
             
@@ -830,6 +977,18 @@
             
             .nav-container {
                 padding: 0 1.5rem;
+            }
+
+            .category-images {
+                grid-template-columns: 1fr;
+            }
+
+            .lamborghini-content {
+                padding: 2rem;
+            }
+
+            .lamborghini-content h2 {
+                font-size: 2.5rem;
             }
         }
 
@@ -895,7 +1054,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Range Rover Background -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-container fade-in">
@@ -923,7 +1082,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section with Real Interior Images -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header fade-in">
@@ -934,7 +1093,7 @@
                 <div class="package fade-in">
                     <div class="package-image refresh"></div>
                     <div class="package-content">
-                        <h3 class="package-title">Refresh Package</h3>
+                        <h3 class="package-title">Luxury Maintenance & Revival</h3>
                         <div class="package-price">Starting at $99</div>
                         <p class="package-description">Preserve your vehicle's elegance with our comprehensive maintenance package, designed for discerning owners who demand consistent luxury.</p>
                         <ul class="package-features">
@@ -945,50 +1104,50 @@
                             <li>Dashboard & console detailing</li>
                             <li>Tire shine application</li>
                         </ul>
-                        <button class="book-button" onclick="bookService('Refresh Package', 99)">Book Now</button>
+                        <button class="book-button" onclick="bookService('Luxury Maintenance & Revival', 99)">Book Now</button>
                     </div>
                 </div>
 
                 <div class="package fade-in">
                     <div class="package-image standard"></div>
                     <div class="package-content">
-                        <h3 class="package-title">Standard Package</h3>
+                        <h3 class="package-title">Complete Luxury Transformation</h3>
                         <div class="package-price">Starting at $149</div>
                         <p class="package-description">Our most coveted service that restores that new-car elegance with comprehensive care that exceeds the highest expectations.</p>
                         <ul class="package-features">
-                            <li>Everything in Refresh Package</li>
+                            <li>Everything in Maintenance Package</li>
                             <li>Clay bar treatment</li>
                             <li>Paint decontamination</li>
                             <li>Leather conditioning</li>
                             <li>Trim restoration</li>
                             <li>Door jamb cleaning</li>
                         </ul>
-                        <button class="book-button" onclick="bookService('Standard Package', 149)">Book Now</button>
+                        <button class="book-button" onclick="bookService('Complete Luxury Transformation', 149)">Book Now</button>
                     </div>
                 </div>
 
                 <div class="package fade-in">
                     <div class="package-image ultimate"></div>
                     <div class="package-content">
-                        <h3 class="package-title">Ultimate Package</h3>
+                        <h3 class="package-title">The Ultimate Luxury Experience</h3>
                         <div class="package-price">Starting at $229</div>
                         <p class="package-description">Our flagship service featuring paint correction and ceramic coating for ultimate protection and a showroom-worthy finish that epitomizes automotive luxury.</p>
                         <ul class="package-features">
-                            <li>Everything in Standard Package</li>
+                            <li>Everything in Transformation Package</li>
                             <li>Paint correction (single stage)</li>
                             <li>Ceramic coating application</li>
                             <li>Premium interior protection</li>
                             <li>12-month coating warranty</li>
                             <li>Headlight restoration</li>
                         </ul>
-                        <button class="book-button" onclick="bookService('Ultimate Package', 229)">Book Now</button>
+                        <button class="book-button" onclick="bookService('The Ultimate Luxury Experience', 229)">Book Now</button>
                     </div>
                 </div>
 
                 <div class="package fade-in">
                     <div class="package-image monthly"></div>
                     <div class="package-content">
-                        <h3 class="package-title">Monthly Maintenance</h3>
+                        <h3 class="package-title">Exclusive Monthly Care Program</h3>
                         <div class="package-price">$79<span style="font-size: 1rem; color: var(--text-luxury-muted);">/month</span></div>
                         <p class="package-description">Keep your vehicle in pristine condition year-round with our exclusive monthly maintenance program. Perfect for luxury vehicle owners who demand perfection.</p>
                         <ul class="package-features">
@@ -999,44 +1158,99 @@
                             <li>Annual paint protection renewal</li>
                             <li>Complimentary emergency touch-ups</li>
                         </ul>
-                        <button class="book-button" onclick="bookService('Monthly Maintenance', 79)">Subscribe</button>
+                        <button class="book-button" onclick="bookService('Exclusive Monthly Care Program', 79)">Subscribe</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section with Real Images -->
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Our Work Speaks for Itself</h2>
-                <p>Witness the transformation that sets us apart from ordinary car washes.</p>
+                <h2>Our Masterful Work</h2>
+                <p>Witness the transformation of luxury vehicles through our meticulous attention to detail and premium craftsmanship.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <i class="fas fa-car"></i>
-                    <div class="gallery-caption">Luxury Sedan Detail</div>
+                <div class="gallery-item interior-porsche fade-in">
+                    <div class="gallery-caption">
+                        <h3>Porsche Interior Perfection</h3>
+                        <p>Premium steering wheel and dashboard restoration to showroom condition</p>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <i class="fas fa-truck"></i>
-                    <div class="gallery-caption">SUV Complete Transform</div>
+                <div class="gallery-item porsche-seats fade-in">
+                    <div class="gallery-caption">
+                        <h3>Luxury Seat Restoration</h3>
+                        <p>Professional leather cleaning with custom red accent detailing</p>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <i class="fas fa-car-sport"></i>
-                    <div class="gallery-caption">Sports Car Ceramic Coating</div>
+                <div class="gallery-item rolls-royce fade-in">
+                    <div class="gallery-caption">
+                        <h3>Ultra-Luxury Interior Care</h3>
+                        <p>Rolls Royce interior detailing with premium materials protection</p>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <i class="fas fa-car-side"></i>
-                    <div class="gallery-caption">Classic Car Restoration</div>
+                <div class="gallery-item range-rover fade-in">
+                    <div class="gallery-caption">
+                        <h3>Sport Luxury Detailing</h3>
+                        <p>Range Rover Sport interior with custom orange and black leather treatment</p>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <i class="fas fa-spray-can"></i>
-                    <div class="gallery-caption">Paint Correction</div>
+                <div class="gallery-item ferrari fade-in">
+                    <div class="gallery-caption">
+                        <h3>Supercar Interior Mastery</h3>
+                        <p>Ferrari interior detailing with carbon fiber and leather care</p>
+                    </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <i class="fas fa-chair"></i>
-                    <div class="gallery-caption">Interior Deep Clean</div>
+                <div class="gallery-item mercedes fade-in">
+                    <div class="gallery-caption">
+                        <h3>Luxury SUV Excellence</h3>
+                        <p>Mercedes G-Wagon interior detailing with premium leather protection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lamborghini Showcase Section -->
+    <section class="lamborghini-showcase">
+        <div class="container">
+            <div class="lamborghini-content fade-in">
+                <h2>Supercar Perfection</h2>
+                <p>From Lamborghinis to Ferraris, we understand the precision required for supercar detailing. Every surface is treated with the respect and expertise these automotive masterpieces deserve.</p>
+                <a href="#contact" class="cta-button">Experience Supercar Detailing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Showcase Section -->
+    <section class="work-showcase">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Specialties</h2>
+                <p>From paint correction to ceramic coating, we deliver results that exceed expectations.</p>
+            </div>
+            <div class="work-categories">
+                <div class="work-category fade-in">
+                    <div class="category-header">
+                        <h3>Paint Correction & Enhancement</h3>
+                        <p>Restoring your vehicle's paint to mirror-like perfection</p>
+                    </div>
+                    <div class="category-images">
+                        <div class="category-image paint-correction"></div>
+                        <div class="category-image bmw-detail"></div>
+                    </div>
+                </div>
+                <div class="work-category fade-in">
+                    <div class="category-header">
+                        <h3>Ceramic Coating Protection</h3>
+                        <p>Long-lasting protection with unmatched gloss and depth</p>
+                    </div>
+                    <div class="category-images">
+                        <div class="category-image ceramic-before-after"></div>
+                        <div class="category-image ceramic-process"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1240,10 +1454,10 @@
                             <label for="service">Select Service</label>
                             <select id="service" name="service" required>
                                 <option value="">Choose a package...</option>
-                                <option value="refresh-package">Refresh Package - Starting at $99</option>
-                                <option value="standard-package">Standard Package - Starting at $149</option>
-                                <option value="ultimate-package">Ultimate Package - Starting at $229</option>
-                                <option value="monthly-maintenance">Monthly Maintenance - $79/month</option>
+                                <option value="luxury-maintenance">Luxury Maintenance & Revival - Starting at $99</option>
+                                <option value="complete-transformation">Complete Luxury Transformation - Starting at $149</option>
+                                <option value="ultimate-experience">The Ultimate Luxury Experience - Starting at $229</option>
+                                <option value="monthly-care">Exclusive Monthly Care Program - $79/month</option>
                             </select>
                         </div>
                         
@@ -1291,10 +1505,10 @@
                 
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <p>• Refresh Package<br>
-                    • Standard Package<br>
-                    • Ultimate Package<br>
-                    • Monthly Maintenance<br>
+                    <p>• Luxury Maintenance & Revival<br>
+                    • Complete Luxury Transformation<br>
+                    • The Ultimate Luxury Experience<br>
+                    • Exclusive Monthly Care Program<br>
                     • Paint Correction<br>
                     • Ceramic Coating</p>
                 </div>
