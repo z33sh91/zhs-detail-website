@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZHS Detail - Premium Mobile Auto Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --luxury-black: #0a0a0a;
+            --luxury-charcoal: #1a1a1a;
+            --luxury-gray: #2a2a2a;
+            --luxury-gold: #d4af37;
+            --luxury-gold-dark: #b8941f;
+            --luxury-gold-accent: #f4e4a6;
+            --text-luxury-white: #ffffff;
+            --text-luxury-medium: #cccccc;
+            --text-luxury-muted: #999999;
+            --glass-luxury: rgba(255, 255, 255, 0.05);
+            --glass-luxury-border: rgba(255, 255, 255, 0.1);
+            --shadow-luxury: rgba(212, 175, 55, 0.3);
+            --shadow-deep: rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--luxury-black);
+            color: var(--text-luxury-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--luxury-gray);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--luxury-gold);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-luxury-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--luxury-gold);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            color: var(--luxury-black);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-luxury);
+        }
+
+        /* Enhanced Hero Section with Background Image */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="carPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><rect width="200" height="200" fill="%23000"/><path d="M20 100 Q60 80 100 100 Q140 120 180 100" stroke="%23d4af37" stroke-width="2" fill="none" opacity="0.3"/><circle cx="50" cy="120" r="3" fill="%23d4af37" opacity="0.5"/><circle cx="150" cy="80" r="2" fill="%23d4af37" opacity="0.4"/></pattern></defs><rect width="1200" height="800" fill="url(%23carPattern)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(212, 175, 55, 0.1) 50%, transparent 100%);
+            animation: shimmer 8s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-luxury-medium);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--luxury-gold);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-luxury-medium);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Enhanced Services Section with Images */
+        .services {
+            padding: 8rem 0;
+            background: var(--luxury-charcoal);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--luxury-gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-luxury-medium);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .package {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .package:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px var(--shadow-deep);
+            border-color: var(--luxury-gold);
+        }
+
+        .package-image {
+            height: 250px;
+            background: linear-gradient(45deg, var(--luxury-gray), var(--luxury-charcoal));
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .package-image.refresh {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+        }
+
+        .package-image.refresh::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 60px;
+            background: #d4af37;
+            border-radius: 50px 50px 20px 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            opacity: 0.8;
+        }
+
+        .package-image.refresh::after {
+            content: '🚗';
+            position: absolute;
+            font-size: 4rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.9;
+        }
+
+        .package-image.standard {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
+        }
+
+        .package-image.standard::before {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 70px;
+            background: linear-gradient(45deg, #d4af37, #f4e4a6);
+            border-radius: 60px 60px 25px 25px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            opacity: 0.7;
+        }
+
+        .package-image.standard::after {
+            content: '✨';
+            position: absolute;
+            font-size: 3rem;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.9;
+        }
+
+        .package-image.ultimate {
+            background: linear-gradient(135deg, #000 0%, #d4af37 20%, #000 40%, #d4af37 60%, #000 100%);
+            animation: luxuryShine 3s infinite;
+        }
+
+        @keyframes luxuryShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .package-image.ultimate::before {
+            content: '';
+            position: absolute;
+            width: 160px;
+            height: 80px;
+            background: linear-gradient(45deg, #d4af37, #fff);
+            border-radius: 70px 70px 30px 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            opacity: 0.6;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .package-image.ultimate::after {
+            content: '👑';
+            position: absolute;
+            font-size: 4rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.9;
+        }
+
+        .package-image.monthly {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 50%, #d4af37 100%);
+        }
+
+        .package-image.monthly::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: #2c3e50;
+            border-radius: 40px 40px 15px 15px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -70%);
+            opacity: 0.8;
+        }
+
+        .package-image.monthly::after {
+            content: '📅';
+            position: absolute;
+            font-size: 3rem;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.9;
+        }
+
+        /* Add visual depth and shine effects */
+        .package-image::before {
+            z-index: 1;
+        }
+
+        .package-image::after {
+            z-index: 2;
+        }+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=');
+        }
+
+        .package-image.ultimate {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                              url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAyAEIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=');
+        }
+
+        .package-image.monthly {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                              url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAyAEIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//9k=');
+        }
+
+        .package-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.1) 0%, 
+                transparent 50%, 
+                rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        .package-image i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: var(--luxury-gold);
+            opacity: 0.8;
+        }
+
+        .package-content {
+            padding: 3rem;
+        }
+
+        .package-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--luxury-gold);
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-luxury-white);
+            margin-bottom: 1rem;
+        }
+
+        .package-description {
+            color: var(--text-luxury-medium);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            color: var(--text-luxury-medium);
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--luxury-gold);
+            font-weight: bold;
+        }
+
+        .book-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            color: var(--luxury-black);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .book-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-luxury);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 0;
+            background: var(--luxury-black);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background: linear-gradient(45deg, var(--luxury-gray), var(--luxury-charcoal));
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px var(--shadow-deep);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(212, 175, 55, 0.2) 0%, 
+                transparent 50%, 
+                rgba(212, 175, 55, 0.2) 100%);
+        }
+
+        .gallery-item i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: var(--luxury-gold);
+            opacity: 0.8;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--text-luxury-white);
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Enhanced Testimonials */
+        .testimonials {
+            padding: 8rem 0;
+            background: var(--luxury-charcoal);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            padding: 3rem;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px var(--shadow-deep);
+        }
+
+        .testimonial-stars {
+            color: var(--luxury-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-luxury-medium);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--luxury-black);
+        }
+
+        .author-info h4 {
+            color: var(--luxury-gold);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-luxury-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 8rem 0;
+            background: var(--luxury-black);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            padding: 3rem;
+            border-radius: 15px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px var(--shadow-deep);
+            border-color: var(--luxury-gold);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--luxury-black);
+            box-shadow: 0 10px 30px var(--shadow-luxury);
+        }
+
+        .feature h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-luxury-white);
+        }
+
+        .feature p {
+            color: var(--text-luxury-medium);
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background: var(--luxury-charcoal);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-info {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--luxury-black);
+        }
+
+        .contact-details h3 {
+            color: var(--luxury-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--text-luxury-medium);
+        }
+
+        .booking-form {
+            background: var(--glass-luxury);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-luxury-border);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--luxury-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-luxury-border);
+            border-radius: 8px;
+            color: var(--text-luxury-white);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--luxury-gold);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--luxury-black);
+            border-top: 1px solid var(--luxury-gray);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--luxury-gold), var(--luxury-gold-accent), var(--luxury-gold-dark));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--luxury-gold);
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .footer-section p {
+            color: var(--text-luxury-medium);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            color: var(--luxury-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-luxury);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--luxury-gray);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-luxury-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .packages-grid,
+            .gallery-grid,
+            .testimonials-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+                gap: 2rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--luxury-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--luxury-gray);
+            border-top: 3px solid var(--luxury-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">ZHS Detail</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-container fade-in">
+                <h1>We Don't Just Detail Cars<br>We Craft Automotive Masterpieces</h1>
+                <p>Experience the pinnacle of automotive care with ZHS Detail. Our master craftsmen bring decades of expertise and premium equipment directly to your location, delivering results that transform your vehicle into a work of art.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="cta-button">View Services</a>
+                    <a href="#contact" class="cta-button" style="background: transparent; border: 2px solid var(--luxury-gold); color: var(--luxury-gold);">Get Quote</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Premium Detailing Packages</h2>
+                <p>Meticulously crafted packages that elevate your vehicle to extraordinary standards of luxury and protection.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package fade-in">
+                    <div class="package-image refresh"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Refresh Package</h3>
+                        <div class="package-price">Starting at $99</div>
+                        <p class="package-description">Preserve your vehicle's elegance with our comprehensive maintenance package, designed for discerning owners who demand consistent luxury.</p>
+                        <ul class="package-features">
+                            <li>Premium hand wash & dry</li>
+                            <li>Wheel & tire cleaning</li>
+                            <li>Interior vacuum & wipe down</li>
+                            <li>Window cleaning (inside & out)</li>
+                            <li>Dashboard & console detailing</li>
+                            <li>Tire shine application</li>
+                        </ul>
+                        <button class="book-button" onclick="bookService('Refresh Package', 99)">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package fade-in">
+                    <div class="package-image standard"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Standard Package</h3>
+                        <div class="package-price">Starting at $149</div>
+                        <p class="package-description">Our most coveted service that restores that new-car elegance with comprehensive care that exceeds the highest expectations.</p>
+                        <ul class="package-features">
+                            <li>Everything in Refresh Package</li>
+                            <li>Clay bar treatment</li>
+                            <li>Paint decontamination</li>
+                            <li>Leather conditioning</li>
+                            <li>Trim restoration</li>
+                            <li>Door jamb cleaning</li>
+                        </ul>
+                        <button class="book-button" onclick="bookService('Standard Package', 149)">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package fade-in">
+                    <div class="package-image ultimate"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Ultimate Package</h3>
+                        <div class="package-price">Starting at $229</div>
+                        <p class="package-description">Our flagship service featuring paint correction and ceramic coating for ultimate protection and a showroom-worthy finish that epitomizes automotive luxury.</p>
+                        <ul class="package-features">
+                            <li>Everything in Standard Package</li>
+                            <li>Paint correction (single stage)</li>
+                            <li>Ceramic coating application</li>
+                            <li>Premium interior protection</li>
+                            <li>12-month coating warranty</li>
+                            <li>Headlight restoration</li>
+                        </ul>
+                        <button class="book-button" onclick="bookService('Ultimate Package', 229)">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package fade-in">
+                    <div class="package-image monthly"></div>
+                    <div class="package-content">
+                        <h3 class="package-title">Monthly Maintenance</h3>
+                        <div class="package-price">$79<span style="font-size: 1rem; color: var(--text-luxury-muted);">/month</span></div>
+                        <p class="package-description">Keep your vehicle in pristine condition year-round with our exclusive monthly maintenance program. Perfect for luxury vehicle owners who demand perfection.</p>
+                        <ul class="package-features">
+                            <li>Monthly luxury maintenance service</li>
+                            <li>Priority booking privileges</li>
+                            <li>25% off additional services</li>
+                            <li>Quarterly deep cleaning included</li>
+                            <li>Annual paint protection renewal</li>
+                            <li>Complimentary emergency touch-ups</li>
+                        </ul>
+                        <button class="book-button" onclick="bookService('Monthly Maintenance', 79)">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Work Speaks for Itself</h2>
+                <p>Witness the transformation that sets us apart from ordinary car washes.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <i class="fas fa-car"></i>
+                    <div class="gallery-caption">Luxury Sedan Detail</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <i class="fas fa-truck"></i>
+                    <div class="gallery-caption">SUV Complete Transform</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <i class="fas fa-car-sport"></i>
+                    <div class="gallery-caption">Sports Car Ceramic Coating</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <i class="fas fa-car-side"></i>
+                    <div class="gallery-caption">Classic Car Restoration</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <i class="fas fa-spray-can"></i>
+                    <div class="gallery-caption">Paint Correction</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <i class="fas fa-chair"></i>
+                    <div class="gallery-caption">Interior Deep Clean</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Client Testimonials</h2>
+                <p>Hear from satisfied customers who experienced the ZHS Detail difference.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"ZHS Detail transformed my BMW beyond my expectations. The attention to detail and premium service quality is unmatched. My car looks better than when I first bought it!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <h4>Michael Johnson</h4>
+                            <p>BMW X5 Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"The convenience of mobile service combined with their expertise is incredible. They came to my office and delivered showroom-quality results. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Mercedes C-Class Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"Professional, reliable, and the results speak for themselves. The ceramic coating has kept my car looking pristine for months. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DW</div>
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Audi A4 Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Why Choose ZHS Detail</h2>
+                <p>Experience unparalleled mobile convenience, masterful results, and exclusive customer service that defines automotive luxury.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly Excellence</h3>
+                    <p>We exclusively use premium biodegradable, eco-friendly products that are safe for your luxury vehicle, family, and environment while delivering exceptional results.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Reserve appointments that accommodate your luxury lifestyle. We work around your schedule to provide premium service exactly when and where you need it.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Complete Mobile Service</h3>
+                    <p>Full-service detailing at your location. We bring all professional equipment and supplies directly to your home or office for maximum convenience.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>100% satisfaction guarantee on all services. Our commitment to excellence ensures you'll be completely satisfied with every detail.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Professional Equipment</h3>
+                    <p>State-of-the-art tools and premium products used by industry professionals. We never compromise on quality or technique.</p>
+                </div>
+
+                <div class="feature fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Insured & Bonded</h3>
+                    <p>Fully licensed, insured, and bonded for your peace of mind. Professional service you can trust with your most valuable assets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Book Your Service</h2>
+                <p>Ready to experience the ZHS Detail difference? Contact us today to schedule your premium detailing service.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3 style="color: var(--luxury-gold); font-family: 'Playfair Display', serif; margin-bottom: 2rem;">Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>(555) 123-DETAIL</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@zhsdetail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Service Area</h3>
+                            <p>Greater Chicago Metropolitan Area</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Mon-Sat: 8AM-6PM<br>Sunday: By Appointment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form fade-in">
+                    <h3 style="color: var(--luxury-gold); font-family: 'Playfair Display', serif; margin-bottom: 2rem;">Book Your Service</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Select Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choose a package...</option>
+                                <option value="refresh-package">Refresh Package - Starting at $99</option>
+                                <option value="standard-package">Standard Package - Starting at $149</option>
+                                <option value="ultimate-package">Ultimate Package - Starting at $229</option>
+                                <option value="monthly-maintenance">Monthly Maintenance - $79/month</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Information</label>
+                            <input type="text" id="vehicle" name="vehicle" placeholder="Year, Make, Model" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Service Address</label>
+                            <textarea id="address" name="address" rows="3" placeholder="Where should we come to detail your vehicle?" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Notes</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Any special requests or additional information..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="book-button">Book My Service</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ZHS Detail</h3>
+                    <p>Premium mobile auto detailing services that transform your vehicle into a masterpiece. Experience luxury, convenience, and excellence in every detail.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p>• Luxury Maintenance<br>
+                    • Complete Transformation<br>
+                    • Ultimate Experience<br>
+                    • Monthly Care Program<br>
+                    • Paint Correction<br>
+                    • Ceramic Coating</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> (555) 123-DETAIL<br>
+                    <i class="fas fa-envelope"></i> info@zhsdetail.com<br>
+                    <i class="fas fa-map-marker-alt"></i> Greater Chicago Area<br>
+                    <i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZHS Detail. All rights reserved. | Licensed, Insured & Bonded</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you for choosing ZHS Detail. We've received your booking request and will contact you within 24 hours to confirm your appointment details.</p>
+            <div class="modal-buttons">
+                <button class="modal-btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loading').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Book service function
+        function bookService(serviceName, price) {
+            const serviceSelect = document.getElementById('service');
+            const serviceOption = Array.from(serviceSelect.options).find(option => 
+                option.text.includes(serviceName)
+            );
+            if (serviceOption) {
+                serviceOption.selected = true;
+            }
+            
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const bookingData = Object.fromEntries(formData);
+            
+            // Simulate booking process
+            setTimeout(function() {
+                document.getElementById('successModal').style.display = 'flex';
+                document.getElementById('bookingForm').reset();
+            }, 1000);
+        });
+
+        // Modal functions
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('successModal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Gallery item click effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 200);
+            });
+        });
+
+        // Add some interactive features
+        document.querySelectorAll('.package').forEach(package => {
+            package.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-20px) scale(1.02)';
+            });
+            
+            package.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Mobile menu toggle (if you want to add mobile menu later)
+        function toggleMobileMenu() {
+            // Implementation for mobile menu
+        }
+
+        // Add some premium touches
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add premium cursor effects for buttons
+            document.querySelectorAll('.cta-button, .book-button').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.cursor = 'pointer';
+                    this.style.boxShadow = '0 12px 35px var(--shadow-luxury)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '0 8px 25px var(--shadow-luxury)';
+                });
+            });
+        });
+
+        // Add form validation feedback
+        document.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.required && !this.value) {
+                    this.style.borderColor = '#ff4444';
+                } else {
+                    this.style.borderColor = 'var(--luxury-gold)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
