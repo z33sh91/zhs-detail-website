@@ -36,7 +36,7 @@
                 <h1>We Don't Just Detail Cars<br>We Craft Automotive Masterpieces</h1>
                 <div class="hero-buttons">
                     <a href="#services" class="cta-button">View Services</a>
-                    <button class="cta-button" onclick="openBookingModal('inspection')" style="background: transparent; border: 2px solid var(--luxury-gold); color: var(--luxury-gold);">Book In-Person Inspection</button>
+                    <button class="cta-button" onclick="openBookingModal('quote')" style="background: transparent; border: 2px solid var(--luxury-gold); color: var(--luxury-gold);">Book Your Service</button>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
@@ -753,14 +753,8 @@
         const bookingTypeInput = document.getElementById('bookingType');
         
         function openBookingModal(type, service = '') {
-            if (type === 'inspection') {
-                modalTitle.textContent = 'Book In-Person Inspection';
-                bookingTypeInput.value = 'inspection';
-                document.getElementById('inspectionService').checked = true;
-            } else {
-                modalTitle.textContent = 'Get Your Quote';
-                bookingTypeInput.value = 'quote';
-            }
+            modalTitle.textContent = 'Book Your Service';
+            bookingTypeInput.value = 'quote';
             
             // Pre-select service if provided
             if (service) {
