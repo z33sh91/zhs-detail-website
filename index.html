@@ -14,137 +14,206 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Navigation -->
+    <!-- Navigation - Improved with mobile menu and sticky CTA -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">ZHS Detail</a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="cta-button" onclick="openBookingModal('quote')">Get Quote</button>
+            <div class="nav-actions">
+                <button class="cta-button primary" onclick="openBookingModal('quote')">Book Now</button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Sticky Book Button for Mobile -->
+    <div class="sticky-book-btn" id="sticky-book-btn">
+        <button onclick="openBookingModal('quote')" class="btn-sticky">
+            <i class="fas fa-calendar-check"></i>
+            Book Service
+        </button>
+    </div>
+
+    <!-- Hero Section - Improved with better CTA hierarchy and social proof -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-container fade-in">
-                <h1>We Don't Just Detail Cars<br>We Craft Automotive Masterpieces</h1>
-                <div class="hero-buttons">
-                    <a href="#services" class="cta-button">View Services</a>
-                    <button class="cta-button" onclick="openBookingModal('quote')" style="background: transparent; border: 2px solid var(--luxury-gold); color: var(--luxury-gold);">Book Your Service</button>
+                <!-- Trust Indicators -->
+                <div class="trust-badges">
+                    <span class="badge"><i class="fas fa-shield-alt"></i> Licensed & Insured</span>
+                    <span class="badge"><i class="fas fa-star"></i> 5-Star Rated</span>
+                    <span class="badge"><i class="fas fa-truck"></i> Mobile Service</span>
                 </div>
+                
+                <h1>Premium Mobile Auto Detailing<br><span class="highlight">That Comes to You</span></h1>
+                <p class="hero-subtitle">Transform your vehicle with professional detailing services at your home or office. No driving, no waiting, just exceptional results.</p>
+                
+                <div class="hero-cta">
+                    <button class="cta-button primary large" onclick="openBookingModal('quote')">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Your Service
+                    </button>
+                    <div class="cta-support">
+                        <span>or call <a href="tel:(630) 427-7353" class="phone-link">(630) 427-7353</a></span>
+                    </div>
+                </div>
+
+                <!-- Improved stats with context -->
                 <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-number">250+</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <span class="stat-label">Satisfied Customers</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">5+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfaction</span>
+                        <span class="stat-number">Same Day</span>
+                        <span class="stat-label">Service Available</span>
+                    </div>
+                </div>
+
+                <!-- Quick benefits -->
+                <div class="quick-benefits">
+                    <div class="benefit">
+                        <i class="fas fa-home"></i>
+                        <span>We Come to You</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-guarantee"></i>
+                        <span>100% Satisfaction Guaranteed</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-clock"></i>
+                        <span>Flexible Scheduling</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Simplified Services Section -->
     <section id="services" class="services">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Premium Detailing Packages</h2>
-                <p>Meticulously crafted packages that elevate your vehicle to extraordinary standards of luxury and protection.</p>
+                <h2>Choose Your Service Package</h2>
+                <p>Professional mobile detailing packages designed for busy lifestyles. All services include free estimates.</p>
             </div>
-            <div class="packages-grid">
-                <div class="package fade-in">
-                    <div class="package-image refresh"></div>
+            
+            <!-- Simple Package Cards -->
+            <div class="packages-grid-simple">
+                <div class="package-card fade-in">
+                    <div class="package-header">
+                        <h3>Refresh</h3>
+                        <div class="price">$149<span>/starting</span></div>
+                    </div>
                     <div class="package-content">
-                        <h3 class="package-title">Refresh Package</h3>
-                        <div class="package-price">Starting at $149</div>
-                        <p class="package-description">Preserve your vehicle's elegance with our comprehensive maintenance package, designed for discerning owners who demand consistent luxury.</p>
-                        <ul class="package-features">
-                            <li>Premium hand wash & dry</li>
-                            <li>Wheel & tire cleaning</li>
-                            <li>Interior vacuum & wipe down</li>
-                            <li>Window cleaning (inside & out)</li>
-                            <li>Dashboard & console detailing</li>
-                            <li>Tire shine application</li>
+                        <p class="package-desc">Perfect for regular maintenance</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Hand wash & dry</li>
+                            <li><i class="fas fa-check"></i> Interior vacuum</li>
+                            <li><i class="fas fa-check"></i> Window cleaning</li>
+                            <li><i class="fas fa-check"></i> Tire shine</li>
                         </ul>
-                        <button class="book-button" onclick="openBookingModal('quote', 'Refresh Package')">Book Now</button>
+                        <button class="book-btn" onclick="openBookingModal('quote', 'Refresh Package')">Select Package</button>
                     </div>
                 </div>
 
-                <div class="package fade-in">
-                    <div class="package-image standard"></div>
+                <div class="package-card featured fade-in">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Standard</h3>
+                        <div class="price">$249<span>/starting</span></div>
+                    </div>
                     <div class="package-content">
-                        <h3 class="package-title">Standard Package</h3>
-                        <div class="package-price">Starting at $249</div>
-                        <p class="package-description">Our most coveted service that restores that new-car elegance with comprehensive care that exceeds the highest expectations.</p>
-                        <ul class="package-features">
-                            <li>Everything in Refresh Package</li>
-                            <li>Clay bar treatment</li>
-                            <li>Paint decontamination</li>
-                            <li>Leather conditioning</li>
-                            <li>Trim restoration</li>
-                            <li>Door jamb cleaning</li>
+                        <p class="package-desc">Complete exterior & interior care</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Everything in Refresh</li>
+                            <li><i class="fas fa-check"></i> Clay bar treatment</li>
+                            <li><i class="fas fa-check"></i> Paint decontamination</li>
+                            <li><i class="fas fa-check"></i> Leather conditioning</li>
                         </ul>
-                        <button class="book-button" onclick="openBookingModal('quote', 'Standard Package')">Book Now</button>
+                        <button class="book-btn primary" onclick="openBookingModal('quote', 'Standard Package')">Select Package</button>
                     </div>
                 </div>
 
-                <div class="package fade-in">
-                    <div class="package-image ultimate"></div>
+                <div class="package-card fade-in">
+                    <div class="package-header">
+                        <h3>Ultimate</h3>
+                        <div class="price">$349<span>/starting</span></div>
+                    </div>
                     <div class="package-content">
-                        <h3 class="package-title">Ultimate Package</h3>
-                        <div class="package-price">Starting at $349</div>
-                        <p class="package-description">Our flagship service featuring paint correction and ceramic coating for ultimate protection and a showroom-worthy finish that epitomizes automotive luxury.</p>
-                        <ul class="package-features">
-                            <li>Everything in Standard Package</li>
-                            <li>Paint correction (single stage)</li>
-                            <li>Ceramic coating application</li>
-                            <li>Premium interior protection</li>
-                            <li>12-month coating warranty</li>
-                            <li>Headlight restoration</li>
+                        <p class="package-desc">Premium protection & correction</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Everything in Standard</li>
+                            <li><i class="fas fa-check"></i> Paint correction</li>
+                            <li><i class="fas fa-check"></i> Ceramic coating</li>
+                            <li><i class="fas fa-check"></i> 12-month warranty</li>
                         </ul>
-                        <button class="book-button" onclick="openBookingModal('quote', 'Ultimate Package')">Book Now</button>
+                        <button class="book-btn" onclick="openBookingModal('quote', 'Ultimate Package')">Select Package</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="package fade-in">
-                    <div class="package-image monthly"></div>
-                    <div class="package-content">
-                        <h3 class="package-title">Exclusive Monthly Care Program</h3>
-                        <div class="package-price">$79<span style="font-size: 1rem; color: var(--text-luxury-muted);">/month</span></div>
-                        <p class="package-description">Keep your vehicle in pristine condition year-round with our exclusive monthly maintenance program. Perfect for luxury vehicle owners who demand perfection.</p>
-                        <ul class="package-features">
-                            <li>Monthly luxury maintenance service</li>
-                            <li>Priority booking privileges</li>
-                            <li>25% off additional services</li>
-                            <li>Quarterly deep cleaning included</li>
-                            <li>Annual paint protection renewal</li>
-                            <li>Complimentary emergency touch-ups</li>
-                        </ul>
-                        <button class="book-button" onclick="openBookingModal('quote', 'Exclusive Monthly Care Program')">Subscribe</button>
+            <!-- Monthly Program Highlight -->
+            <div class="monthly-program fade-in">
+                <div class="program-content">
+                    <h3><i class="fas fa-crown"></i> Monthly Care Program</h3>
+                    <p>Keep your vehicle pristine year-round with priority scheduling and exclusive discounts</p>
+                    <div class="program-benefits">
+                        <span>Monthly Service</span>
+                        <span>Priority Booking</span>
+                        <span>25% Off Add-ons</span>
+                    </div>
+                </div>
+                <div class="program-cta">
+                    <div class="program-price">$79<span>/month</span></div>
+                    <button class="book-btn" onclick="openBookingModal('quote', 'Monthly Care Program')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-proof-content fade-in">
+                <h2>Trusted by Chicago's Car Enthusiasts</h2>
+                <div class="proof-stats">
+                    <div class="proof-item">
+                        <div class="proof-number">250+</div>
+                        <div class="proof-label">Happy Customers</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-number">4.9★</div>
+                        <div class="proof-label">Average Rating</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-number">98%</div>
+                        <div class="proof-label">Customer Retention</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - Streamlined -->
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Portfolio</h2>
-                <p>Witness the transformation of luxury vehicles through our meticulous attention to detail and premium craftsmanship.</p>
+                <h2>Our Work Speaks for Itself</h2>
+                <p>See the transformation we deliver for luxury vehicles across Chicagoland</p>
             </div>
             
             <div class="portfolio-gallery">
@@ -153,57 +222,29 @@
                         <div class="portfolio-slide">
                             <img src="images/Interior/PorscheSteeringWheel.jpeg" alt="Porsche Interior Perfection">
                             <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Porsche Interior Perfection</h3>
-                                <p class="portfolio-description">Premium steering wheel and dashboard restoration to showroom condition</p>
+                                <h3 class="portfolio-title">Porsche Interior Detail</h3>
+                                <p class="portfolio-description">Restored to showroom condition</p>
                             </div>
                         </div>
                         <div class="portfolio-slide">
                             <img src="images/Interior/PorscheInterior.jpeg" alt="Luxury Seat Restoration">
                             <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Luxury Seat Restoration</h3>
-                                <p class="portfolio-description">Professional leather cleaning with custom red accent detailing</p>
+                                <h3 class="portfolio-title">Luxury Seat Care</h3>
+                                <p class="portfolio-description">Professional leather treatment</p>
                             </div>
                         </div>
                         <div class="portfolio-slide">
                             <img src="images/Interior/RollsRoyce.jpeg" alt="Ultra-Luxury Interior Care">
                             <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Ultra-Luxury Interior Care</h3>
-                                <p class="portfolio-description">Rolls Royce interior detailing with premium materials protection</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-slide">
-                            <img src="images/Interior/Rangerover.jpeg" alt="Sport Luxury Detailing">
-                            <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Sport Luxury Detailing</h3>
-                                <p class="portfolio-description">Range Rover Sport interior with custom orange and black leather treatment</p>
+                                <h3 class="portfolio-title">Rolls Royce Detail</h3>
+                                <p class="portfolio-description">Ultra-luxury interior care</p>
                             </div>
                         </div>
                         <div class="portfolio-slide">
                             <img src="images/Interior/Ferrari.jpeg" alt="Supercar Interior Mastery">
                             <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Supercar Interior Mastery</h3>
-                                <p class="portfolio-description">Ferrari interior detailing with carbon fiber and leather care</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-slide">
-                            <img src="images/Interior/Mercedes.jpeg" alt="Luxury SUV Excellence">
-                            <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Luxury SUV Excellence</h3>
-                                <p class="portfolio-description">Mercedes G-Wagon interior detailing with premium leather protection</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-slide">
-                            <img src="images/Q8Rear.jpeg" alt="Luxury Sedan Transformation">
-                            <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Luxury Sedan Transformation</h3>
-                                <p class="portfolio-description">Professional exterior detailing with paint enhancement</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-slide">
-                            <img src="images/CorvetteRear.jpg" alt="Premium Paint Correction">
-                            <div class="portfolio-overlay">
-                                <h3 class="portfolio-title">Premium Paint Correction</h3>
-                                <p class="portfolio-description">Multi-stage paint correction for mirror-like finish</p>
+                                <h3 class="portfolio-title">Ferrari Interior</h3>
+                                <p class="portfolio-description">Supercar precision detailing</p>
                             </div>
                         </div>
                     </div>
@@ -219,312 +260,117 @@
                     <span class="portfolio-indicator" onclick="currentSlide(2)"></span>
                     <span class="portfolio-indicator" onclick="currentSlide(3)"></span>
                     <span class="portfolio-indicator" onclick="currentSlide(4)"></span>
-                    <span class="portfolio-indicator" onclick="currentSlide(5)"></span>
-                    <span class="portfolio-indicator" onclick="currentSlide(6)"></span>
-                    <span class="portfolio-indicator" onclick="currentSlide(7)"></span>
-                    <span class="portfolio-indicator" onclick="currentSlide(8)"></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Showcase Section -->
-    <section class="work-showcase">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Our Specialties</h2>
-                <p>From paint correction to ceramic coating, we deliver results that exceed expectations.</p>
-            </div>
-            <div class="work-categories">
-                <div class="work-category fade-in">
-                    <div class="category-header">
-                        <h3>Paint Correction & Enhancement</h3>
-                        <p>Restoring your vehicle's paint to mirror-like perfection</p>
-                    </div>
-                    <div class="category-images">
-                        <div class="category-image paint-correction"></div>
-                        <div class="category-image bmw-detail"></div>
-                    </div>
-                </div>
-                <div class="work-category fade-in">
-                    <div class="category-header">
-                        <h3>Ceramic Coating Protection</h3>
-                        <p>Long-lasting protection with unmatched gloss and depth</p>
-                    </div>
-                    <div class="category-images">
-                        <div class="category-image ceramic-before-after"></div>
-                        <div class="category-image ceramic-process"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section - Condensed -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Client Testimonials</h2>
-                <p>Hear from satisfied customers who experienced the ZHS Detail difference.</p>
+                <h2>What Our Customers Say</h2>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial fade-in">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-content">"ZHS Detail transformed my BMW beyond my expectations. The attention to detail and premium service quality is unmatched. My car looks better than when I first bought it!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MW</div>
-                        <div class="author-info">
-                            <h4>Michael Wheeling</h4>
-                            <p>BMW X5 Owner</p>
-                        </div>
+            <div class="testimonials-slider fade-in">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"My BMW looks better than when I bought it. The convenience of mobile service is incredible!"</p>
+                    <div class="author">
+                        <span class="name">Michael W.</span>
+                        <span class="vehicle">BMW X5 Owner</span>
                     </div>
                 </div>
-
-                <div class="testimonial fade-in">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-content">"The convenience of mobile service combined with their expertise is incredible. They came to my office and delivered showroom-quality results. Highly recommend!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SC</div>
-                        <div class="author-info">
-                            <h4>Sarah Chen</h4>
-                            <p>Mercedes C-Class Owner</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial fade-in">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-content">"Professional, reliable, and the results speak for themselves. The ceramic coating has kept my car looking pristine for months. Worth every penny!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">DW</div>
-                        <div class="author-info">
-                            <h4>Darryl Wilson</h4>
-                            <p>Audi A4 Owner</p>
-                        </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Professional, reliable, and the results speak for themselves. Worth every penny!"</p>
+                    <div class="author">
+                        <span class="name">Sarah C.</span>
+                        <span class="vehicle">Mercedes C-Class</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose">
+    <!-- Simplified Contact/Booking Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2>Why Choose ZHS Detail</h2>
-                <p>Experience unparalleled mobile convenience, masterful results, and exclusive customer service that defines automotive luxury.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Complete Mobile Service</h3>
-                    <p>Full-service detailing at your location. We bring all professional equipment and supplies directly to your home or office for maximum convenience.</p>
-                </div>
-
-                <div class="feature fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Satisfaction Guaranteed</h3>
-                    <p>100% satisfaction guarantee on all services. Our commitment to excellence ensures you'll be completely satisfied with every detail.</p>
-                    </div>
-
-                <div class="feature fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Professional Equipment</h3>
-                    <p>State-of-the-art tools and premium products used by industry professionals. We never compromise on quality or technique.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Book Your Service</h2>
-                <p>Ready to experience the ZHS Detail difference? Contact us today to schedule your premium detailing service.</p>
-            </div>
-            <div class="contact-content">
+            <div class="contact-grid">
                 <div class="contact-info fade-in">
-                    <h3 style="color: var(--luxury-gold); font-family: 'Playfair Display', serif; margin-bottom: 2rem;">Get In Touch</h3>
+                    <h2>Ready to Book?</h2>
+                    <p>Get your free estimate and schedule your service today</p>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="contact-methods">
+                        <div class="contact-method">
                             <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Call or Text</h4>
+                                <a href="tel:(630) 427-7353">(630) 427-7353</a>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h3>Call Us</h3>
-                            <p>(630) 427-7353</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                        <div class="contact-method">
                             <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <a href="mailto:zhsdetail@gmail.com">zhsdetail@gmail.com</a>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h3>Email Us</h3>
-                            <p>zhsdetail@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                        <div class="contact-method">
                             <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Service Area</h3>
-                            <p>Greater Chicago Metropolitan Area</p>
+                            <div>
+                                <h4>Service Area</h4>
+                                <span>Greater Chicago Area</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Business Hours</h3>
-                            <p>Mon-Thur: 10AM-4PM<br>Fri-Sun: 9AM-5PM (Appointment only)</p>
-                        </div>
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <p>Mon-Thu: 10AM-4PM<br>Fri-Sun: 9AM-5PM</p>
                     </div>
                 </div>
 
-                <div class="booking-form fade-in">
-                    <h3 style="color: var(--luxury-gold); font-family: 'Playfair Display', serif; margin-bottom: 2rem;">Book Your Service</h3>
-                    <!-- Netlify Form -->
-                    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" id="bookingForm">
-                        <input type="hidden" name="form-name" value="contact">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Select Service</label>
-                            <select id="service" name="service" required>
-                                <option value="">Choose a package...</option>
-                                <option value="refresh-package">Refresh Package - Starting at $149</option>
-                                <option value="standard-package">Standard Package - Starting at $249</option>
-                                <option value="ultimate-package">Ultimate Package - Starting at $349</option>
-                                <option value="monthly-maintenance">Exclusive Monthly Care Program - $79/month</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="vehicle">Vehicle Information</label>
-                            <input type="text" id="vehicle" name="vehicle" placeholder="Year, Make, Model" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="date">Preferred Date</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="address">Service Address</label>
-                            <textarea id="address" name="address" rows="3" placeholder="Where should we come to detail your vehicle?" required></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Additional Notes</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Any special requests or additional information..."></textarea>
-                        </div>
-                        
-                        <!-- Netlify reCAPTCHA -->
-                        <div data-netlify-recaptcha="true"></div>
-                        
-                        <button type="submit" class="book-button">Book My Service</button>
-                    </form>
+                <div class="quick-book fade-in">
+                    <div class="quick-book-card">
+                        <h3>Book Online</h3>
+                        <p>Get your free estimate in under 2 minutes</p>
+                        <button class="cta-button primary large" onclick="openBookingModal('quote')">
+                            <i class="fas fa-calendar-check"></i>
+                            Get Free Estimate
+                        </button>
+                        <p class="guarantee">📞 We'll call you within 2 hours</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Simplified Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-brand">
                     <h3>ZHS Detail</h3>
-                    <p>Premium mobile auto detailing services that transform your vehicle into a masterpiece. Experience luxury, convenience, and excellence in every detail.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p>Premium mobile auto detailing for the Greater Chicago Area</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <p>• Exclusive Monthly Care Program<br>
-                    • Paint Correction<br>
-                    • Ceramic Coating<br>
-                    • Headlight Restoration<br>
-                    • Interior Cleaning<br>
-                    • Exterior Detailing<br>
-                    • Wheel & Tire Care<br>
-                    • Paint Protection</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone"></i> (630) 427-7353<br>
-                    <i class="fas fa-envelope"></i> zhsdetail@gmail.com<br>
-                    <i class="fas fa-map-marker-alt"></i> Greater Chicago Area<br>
-                    <i class="fas fa-clock"></i> Mon-Thur: 10AM-4PM<br>
-                    <i class="fas fa-clock"></i> Fri-Sun: 9AM-5PM (Appointment only)</p>
+                <div class="footer-contact">
+                    <p><strong>Call:</strong> (630) 427-7353</p>
+                    <p><strong>Email:</strong> zhsdetail@gmail.com</p>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 ZHS Detail. All rights reserved. | Licensed, Insured & Bonded</p>
+                <p>&copy; 2025 ZHS Detail. Licensed, Insured & Bonded.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Booking Modal -->
+    <!-- Existing Booking Modal (keeping your current implementation) -->
     <div id="bookingModal" class="booking-modal">
         <div class="booking-modal-content">
             <span class="modal-close">&times;</span>
-            <!-- Netlify Modal Form -->
             <form name="booking-modal" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="booking-form-modal" id="modalBookingForm">
                 <input type="hidden" name="form-name" value="booking-modal">
-                <h2 id="modalTitle">Get Your Quote</h2>
+                <h2 id="modalTitle">Get Your Free Estimate</h2>
                 
                 <div class="form-row">
                     <div class="form-group">
@@ -556,11 +402,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="vehicleMake">Vehicle Make *</label>
-                        <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g., BMW, Mercedes, etc." required>
+                        <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g., BMW, Mercedes" required>
                     </div>
                     <div class="form-group">
                         <label for="vehicleModel">Vehicle Model *</label>
-                        <input type="text" id="vehicleModel" name="vehicleModel" placeholder="e.g., X5, C-Class, etc." required>
+                        <input type="text" id="vehicleModel" name="vehicleModel" placeholder="e.g., X5, C-Class" required>
                     </div>
                 </div>
 
@@ -570,88 +416,44 @@
                         <input type="number" id="vehicleYear" name="vehicleYear" min="1990" max="2025" required>
                     </div>
                     <div class="form-group">
-                        <label for="vehicleColor">Color</label>
-                        <input type="text" id="vehicleColor" name="vehicleColor" placeholder="Vehicle color">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
                         <label for="preferredDate">Preferred Date *</label>
                         <input type="date" id="preferredDate" name="preferredDate" required>
                     </div>
-                    <div class="form-group">
-                        <label for="preferredTime">Preferred Time *</label>
-                        <select id="preferredTime" name="preferredTime" required>
-                            <option value="">Select a time</option>
-                            <option value="9:00 AM">9:00 AM</option>
-                            <option value="10:00 AM">10:00 AM</option>
-                            <option value="11:00 AM">11:00 AM</option>
-                            <option value="12:00 PM">12:00 PM</option>
-                            <option value="1:00 PM">1:00 PM</option>
-                            <option value="2:00 PM">2:00 PM</option>
-                            <option value="3:00 PM">3:00 PM</option>
-                            <option value="4:00 PM">4:00 PM</option>
-                            <option value="5:00 PM">5:00 PM</option>
-                        </select>
-                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Services Interested In *</label>
+                    <label>Service Package *</label>
                     <div class="service-options">
                         <div class="service-option">
-                            <input type="checkbox" id="refreshService" name="services" value="Refresh Package">
+                            <input type="radio" id="refreshService" name="package" value="Refresh Package" required>
                             <label for="refreshService">Refresh Package ($149)</label>
                         </div>
                         <div class="service-option">
-                            <input type="checkbox" id="standardService" name="services" value="Standard Package">
+                            <input type="radio" id="standardService" name="package" value="Standard Package" required>
                             <label for="standardService">Standard Package ($249)</label>
                         </div>
                         <div class="service-option">
-                            <input type="checkbox" id="ultimateService" name="services" value="Ultimate Package">
+                            <input type="radio" id="ultimateService" name="package" value="Ultimate Package" required>
                             <label for="ultimateService">Ultimate Package ($349)</label>
                         </div>
                         <div class="service-option">
-                            <input type="checkbox" id="monthlyService" name="services" value="Monthly Care Program">
+                            <input type="radio" id="monthlyService" name="package" value="Monthly Care Program" required>
                             <label for="monthlyService">Monthly Care Program ($79/mo)</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="ceramicService" name="services" value="Ceramic Coating">
-                            <label for="ceramicService">Ceramic Coating</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="paintCorrectionService" name="services" value="Paint Correction">
-                            <label for="paintCorrectionService">Paint Correction</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="interiorService" name="services" value="Interior Detailing">
-                            <label for="interiorService">Interior Detailing</label>
-                        </div>
-                        <div class="service-option">
-                            <input type="checkbox" id="inspectionService" name="services" value="In-Person Inspection">
-                            <label for="inspectionService">In-Person Inspection</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="modalAdditionalInfo">Additional Information</label>
-                    <textarea id="modalAdditionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your vehicle's condition, specific concerns, or any special requests..."></textarea>
+                    <label for="modalAdditionalInfo">Additional Notes</label>
+                    <textarea id="modalAdditionalInfo" name="additionalInfo" rows="3" placeholder="Any specific requests or vehicle condition details..."></textarea>
                 </div>
 
-                <!-- Hidden field to track booking type -->
-                <input type="hidden" id="bookingType" name="bookingType" value="">
-
-                <!-- Netlify reCAPTCHA -->
+                <input type="hidden" id="bookingType" name="bookingType" value="quote">
                 <div data-netlify-recaptcha="true"></div>
 
                 <div class="form-buttons">
                     <button type="button" class="btn-modal btn-modal-secondary" onclick="closeBookingModal()">Cancel</button>
-                    <button type="submit" class="btn-modal btn-modal-primary" id="submitBtn">
-                        <span id="btnText">Send Request</span>
-                        <div id="btnSpinner" class="spinner" style="display: none;"></div>
-                    </button>
+                    <button type="submit" class="btn-modal btn-modal-primary">Get My Free Estimate</button>
                 </div>
             </form>
         </div>
@@ -661,17 +463,37 @@
     <div id="successModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Request Submitted!</h2>
-            <p>Thank you for choosing ZHS Detail. We've received your request and will contact you within 24 hours to confirm your appointment details and discuss pricing.</p>
+            <h2>Estimate Request Sent! 🎉</h2>
+            <p>We'll call you within 2 hours to discuss your service and provide a custom quote.</p>
             <div class="modal-buttons">
-                <button class="modal-btn" onclick="closeModal()">Close</button>
+                <button class="modal-btn" onclick="closeModal()">Perfect!</button>
                 <a href="tel:(630) 427-7353" class="modal-btn">Call Us Now</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Portfolio Gallery Functionality
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Sticky book button for mobile
+        const stickyBtn = document.getElementById('sticky-book-btn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                stickyBtn.classList.add('visible');
+            } else {
+                stickyBtn.classList.remove('visible');
+            }
+        });
+
+        // Portfolio functionality (simplified)
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.portfolio-slide');
         const indicators = document.querySelectorAll('.portfolio-indicator');
@@ -699,8 +521,8 @@
             currentSlideIndex = index - 1;
             showSlide(currentSlideIndex);
         }
-        
-        // Auto-advance slides every 5 seconds
+
+        // Auto-advance slides
         setInterval(() => {
             changeSlide(1);
         }, 5000);
@@ -712,7 +534,7 @@
                 setTimeout(function() {
                     document.getElementById('loading').style.display = 'none';
                 }, 500);
-            }, 1000);
+            }, 800);
         });
 
         // Smooth scrolling
@@ -729,7 +551,7 @@
             });
         });
 
-        // Fade in animation on scroll
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -747,21 +569,21 @@
             observer.observe(el);
         });
 
-        // Booking Modal Functionality
+        // Booking Modal functionality
         const bookingModal = document.getElementById('bookingModal');
         const modalTitle = document.getElementById('modalTitle');
         const bookingTypeInput = document.getElementById('bookingType');
         
         function openBookingModal(type, service = '') {
-            modalTitle.textContent = 'Book Your Service';
+            modalTitle.textContent = 'Get Your Free Estimate';
             bookingTypeInput.value = 'quote';
             
             // Pre-select service if provided
             if (service) {
-                const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
-                serviceCheckboxes.forEach(checkbox => {
-                    if (checkbox.value.includes(service) || service.includes(checkbox.value.split(' ')[0])) {
-                        checkbox.checked = true;
+                const serviceRadios = document.querySelectorAll('input[name="package"]');
+                serviceRadios.forEach(radio => {
+                    if (radio.value.includes(service) || service.includes(radio.value.split(' ')[0])) {
+                        radio.checked = true;
                     }
                 });
             }
@@ -783,20 +605,17 @@
             }
         });
         
-        // Close modal with close button
         document.querySelector('.modal-close').addEventListener('click', closeBookingModal);
 
-        // Form submission success handler
+        // Success modal functions
         function showSuccessMessage() {
             document.getElementById('successModal').style.display = 'block';
         }
 
-        // Modal functions
         function closeModal() {
             document.getElementById('successModal').style.display = 'none';
         }
 
-        // Close modal when clicking outside
         window.addEventListener('click', function(e) {
             const modal = document.getElementById('successModal');
             if (e.target === modal) {
@@ -804,39 +623,546 @@
             }
         });
 
-        // Set minimum date to today for all date inputs
+        // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date').min = today;
         document.getElementById('preferredDate').min = today;
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            }
-        });
-
-        // Enhanced interactions
-        document.querySelectorAll('.package').forEach(package => {
-            package.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-20px) scale(1.02)';
-            });
-            
-            package.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Check for URL parameters to show success message
+        // Check for success parameter
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('success') === 'true') {
             showSuccessMessage();
-            // Clean URL
             window.history.replaceState({}, document.title, window.location.pathname);
         }
     </script>
+
+    <style>
+        /* Additional Styles for Improvements */
+        
+        /* Trust badges */
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--luxury-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            color: var(--luxury-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Improved hero styling */
+        .hero .highlight {
+            color: var(--luxury-gold);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            margin-bottom: 3rem;
+        }
+        
+        .cta-button.large {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-support {
+            margin-top: 1rem;
+            color: var(--text-luxury-muted);
+        }
+        
+        .phone-link {
+            color: var(--luxury-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Quick benefits */
+        .quick-benefits {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-luxury-medium);
+            font-size: 0.9rem;
+        }
+        
+        .benefit i {
+            color: var(--luxury-gold);
+        }
+
+        /* Mobile navigation improvements */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--luxury-gold);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Sticky book button */
+        .sticky-book-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-book-btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-sticky {
+            background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
+            color: var(--luxury-black);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Simplified package cards */
+        .packages-grid-simple {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .package-card {
+            background: var(--glass-luxury);
+            border: 1px solid var(--glass-luxury-border);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-card.featured {
+            border-color: var(--luxury-gold);
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--luxury-gold);
+            color: var(--luxury-black);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .package-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .package-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--luxury-gold);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--text-luxury-muted);
+        }
+        
+        .package-desc {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-luxury-medium);
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-luxury-medium);
+        }
+        
+        .feature-list i {
+            color: var(--luxury-gold);
+        }
+        
+        .book-btn {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--luxury-gold);
+            background: transparent;
+            color: var(--luxury-gold);
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .book-btn.primary {
+            background: var(--luxury-gold);
+            color: var(--luxury-black);
+        }
+        
+        .book-btn:hover {
+            background: var(--luxury-gold);
+            color: var(--luxury-black);
+        }
+
+        /* Monthly program highlight */
+        .monthly-program {
+            background: linear-gradient(135deg, var(--luxury-charcoal), var(--luxury-gray));
+            border: 1px solid var(--luxury-gold);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .program-content h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--luxury-gold);
+        }
+        
+        .program-benefits {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .program-benefits span {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--luxury-gold);
+        }
+        
+        .program-cta {
+            text-align: center;
+        }
+        
+        .program-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--luxury-gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Social proof section */
+        .social-proof {
+            background: var(--luxury-charcoal);
+            padding: 4rem 0;
+        }
+        
+        .social-proof-content {
+            text-align: center;
+        }
+        
+        .proof-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .proof-item {
+            text-align: center;
+        }
+        
+        .proof-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--luxury-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .proof-label {
+            color: var(--text-luxury-medium);
+        }
+
+        /* Simplified testimonials */
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--glass-luxury);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--glass-luxury-border);
+        }
+        
+        .stars {
+            color: var(--luxury-gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card p {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text-luxury-medium);
+        }
+        
+        .author .name {
+            font-weight: bold;
+            color: var(--luxury-gold);
+        }
+        
+        .author .vehicle {
+            color: var(--text-luxury-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact section improvements */
+        .contact-section {
+            background: var(--luxury-black);
+            padding: 5rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .contact-methods {
+            margin: 2rem 0;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-method i {
+            background: var(--luxury-gold);
+            color: var(--luxury-black);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-method h4 {
+            margin-bottom: 0.25rem;
+            color: var(--luxury-gold);
+        }
+        
+        .contact-method a {
+            color: var(--text-luxury-medium);
+            text-decoration: none;
+        }
+        
+        .business-hours {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--luxury-gray);
+        }
+        
+        .business-hours h4 {
+            color: var(--luxury-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .quick-book-card {
+            background: linear-gradient(135deg, var(--luxury-charcoal), var(--luxury-gray));
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid var(--luxury-gold);
+        }
+        
+        .quick-book-card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--luxury-gold);
+        }
+        
+        .quick-book-card p {
+            margin-bottom: 2rem;
+            color: var(--text-luxury-medium);
+        }
+        
+        .guarantee {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--luxury-gold);
+        }
+
+        /* Modal improvements */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .service-options .service-option {
+            margin-bottom: 1rem;
+        }
+        
+        .service-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--luxury-black);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .packages-grid-simple {
+                grid-template-columns: 1fr;
+            }
+            
+            .monthly-program {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonials-slider {
+                grid-template-columns: 1fr;
+            }
+            
+            .proof-stats {
+                gap: 2rem;
+            }
+            
+            .trust-badges {
+                justify-content: center;
+            }
+            
+            .quick-benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .sticky-book-btn {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .quick-book-card {
+                padding: 2rem;
+            }
+            
+            .package-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </body>
 </html>
