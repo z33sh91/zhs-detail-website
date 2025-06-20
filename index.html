@@ -580,93 +580,437 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-	<section id="portfolio" class="portfolio">
-		<div class="container">
-			<div class="section-header fade-in">
-				<h2>Our Work</h2>
-				<p>See the premium results we deliver for luxury vehicles across Chicagoland</p>
-			</div>
-			
-			<div class="portfolio-gallery">
-				<div class="portfolio-container">
-					<div class="portfolio-slides">
-						<div class="portfolio-slide active">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Porsche Interior Detail</h3>
-								<p class="portfolio-description">Restored to showroom condition</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Ultra-Luxury Care</h3>
-								<p class="portfolio-description">Premium materials protection</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Supercar Precision</h3>
-								<p class="portfolio-description">Carbon fiber and leather care</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Restoration Experts</h3>
-								<p class="portfolio-description">Corvette Grand Sport Paint Corrected and Ceramic Coated</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Paint Enhancement</h3>
-								<p class="portfolio-description">Restored to showroom condition</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">BMW iX</h3>
-								<p class="portfolio-description">Paint Enhancement</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Leather Protection</h3>
-								<p class="portfolio-description">Interior leather ceramic coating protection</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Rubber Mat Protection</h3>
-								<p class="portfolio-description">Rubber Mat Ceramic Protection</p>
-							</div>
-						</div>
-						<div class="portfolio-slide">
-							<div class="portfolio-overlay">
-								<h3 class="portfolio-title">Paint Enhancement</h3>
-								<p class="portfolio-description">Professional correction results</p>
-							</div>
-						</div>
-					</div>
-					<button class="portfolio-nav-btn portfolio-prev" onclick="changeSlide(-1)">
-						<i class="fas fa-chevron-left"></i>
-					</button>
-					<button class="portfolio-nav-btn portfolio-next" onclick="changeSlide(1)">
-						<i class="fas fa-chevron-right"></i>
-					</button>
-				</div>
-				<div class="portfolio-indicators">
-					<span class="portfolio-indicator active" onclick="currentSlide(1)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(2)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(3)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(4)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(5)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(6)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(7)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(8)"></span>
-					<span class="portfolio-indicator" onclick="currentSlide(9)"></span>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- Portfolio Section with Modal -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Our Work</h2>
+            <p>See the premium results we deliver for luxury vehicles across Chicagoland</p>
+        </div>
+        
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid">
+            <div class="portfolio-item" onclick="openImageModal('images/Interior/PorscheSteeringWheel.jpeg', 'Porsche Interior Detail', 'Restored to showroom condition')">
+                <div class="portfolio-item-image" style="background-image: url('images/Interior/PorscheSteeringWheel.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Porsche Interior Detail</h3>
+                    <p>Restored to showroom condition</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/Interior/RollsRoyce.jpeg', 'Ultra-Luxury Care', 'Premium materials protection')">
+                <div class="portfolio-item-image" style="background-image: url('images/Interior/RollsRoyce.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Ultra-Luxury Care</h3>
+                    <p>Premium materials protection</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/Interior/Ferrari.jpeg', 'Supercar Precision', 'Carbon fiber and leather care')">
+                <div class="portfolio-item-image" style="background-image: url('images/Interior/Ferrari.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Supercar Precision</h3>
+                    <p>Carbon fiber and leather care</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/CorvetteFront.jpeg', 'Restoration Experts', 'Corvette Grand Sport Paint Corrected and Ceramic Coated')">
+                <div class="portfolio-item-image" style="background-image: url('images/CorvetteFront.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Restoration Experts</h3>
+                    <p>Corvette Grand Sport Paint Corrected and Ceramic Coated</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/lambo.jpeg', 'Paint Enhancement', 'Restored to showroom condition')">
+                <div class="portfolio-item-image" style="background-image: url('images/lambo.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Paint Enhancement</h3>
+                    <p>Restored to showroom condition</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/Exterior/BMWiXFront.jpeg', 'BMW iX', 'Paint Enhancement')">
+                <div class="portfolio-item-image" style="background-image: url('images/Exterior/BMWiXFront.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>BMW iX</h3>
+                    <p>Paint Enhancement</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/Interior/leatherProtection.jpeg', 'Leather Protection', 'Interior leather ceramic coating protection')">
+                <div class="portfolio-item-image" style="background-image: url('images/Interior/leatherProtection.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Leather Protection</h3>
+                    <p>Interior leather ceramic coating protection</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/Interior/RubberMatsCeramicCoatediX.jpeg', 'Rubber Mat Protection', 'Rubber Mat Ceramic Protection')">
+                <div class="portfolio-item-image" style="background-image: url('images/Interior/RubberMatsCeramicCoatediX.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Rubber Mat Protection</h3>
+                    <p>Rubber Mat Ceramic Protection</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="openImageModal('images/Q8Rear.jpeg', 'Paint Enhancement', 'Professional correction results')">
+                <div class="portfolio-item-image" style="background-image: url('images/Q8Rear.jpeg')"></div>
+                <div class="portfolio-item-overlay">
+                    <h3>Paint Enhancement</h3>
+                    <p>Professional correction results</p>
+                    <div class="view-full">Click to view full image</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+    <div class="image-modal-content">
+        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <div class="image-modal-info">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+        <div class="image-modal-nav">
+            <button class="modal-nav-btn modal-prev" onclick="previousModalImage()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-nav-btn modal-next" onclick="nextModalImage()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.portfolio-item {
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--luxury-charcoal);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-deep);
+}
+
+.portfolio-item-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-image {
+    transform: scale(1.05);
+}
+
+.portfolio-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 2rem;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-item-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--luxury-gold);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-item-overlay p {
+    color: var(--text-luxury-medium);
+    margin-bottom: 1rem;
+}
+
+.view-full {
+    color: var(--luxury-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Image Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.image-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    transition: color 0.3s ease;
+}
+
+.image-modal-close:hover {
+    color: var(--luxury-gold);
+}
+
+#modalImage {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.image-modal-info {
+    text-align: center;
+    margin-top: 2rem;
+    color: white;
+}
+
+.image-modal-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--luxury-gold);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.image-modal-info p {
+    color: var(--text-luxury-medium);
+    font-size: 1.2rem;
+}
+
+.image-modal-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    pointer-events: none;
+}
+
+.modal-nav-btn {
+    background: rgba(212, 175, 55, 0.9);
+    color: var(--luxury-black);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    pointer-events: all;
+}
+
+.modal-nav-btn:hover {
+    background: var(--luxury-gold);
+    transform: scale(1.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-item {
+        height: 250px;
+    }
+    
+    .image-modal-content {
+        margin: 10vh auto;
+        max-width: 95vw;
+    }
+    
+    #modalImage {
+        max-height: 60vh;
+    }
+    
+    .image-modal-close {
+        top: -40px;
+        font-size: 2rem;
+    }
+    
+    .modal-nav-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+<script>
+// Portfolio Modal Functionality
+const portfolioImages = [
+    {
+        src: 'images/Interior/PorscheSteeringWheel.jpeg',
+        title: 'Porsche Interior Detail',
+        description: 'Restored to showroom condition'
+    },
+    {
+        src: 'images/Interior/RollsRoyce.jpeg',
+        title: 'Ultra-Luxury Care',
+        description: 'Premium materials protection'
+    },
+    {
+        src: 'images/Interior/Ferrari.jpeg',
+        title: 'Supercar Precision',
+        description: 'Carbon fiber and leather care'
+    },
+    {
+        src: 'images/CorvetteFront.jpeg',
+        title: 'Restoration Experts',
+        description: 'Corvette Grand Sport Paint Corrected and Ceramic Coated'
+    },
+    {
+        src: 'images/lambo.jpeg',
+        title: 'Paint Enhancement',
+        description: 'Restored to showroom condition'
+    },
+    {
+        src: 'images/Exterior/BMWiXFront.jpeg',
+        title: 'BMW iX',
+        description: 'Paint Enhancement'
+    },
+    {
+        src: 'images/Interior/leatherProtection.jpeg',
+        title: 'Leather Protection',
+        description: 'Interior leather ceramic coating protection'
+    },
+    {
+        src: 'images/Interior/RubberMatsCeramicCoatediX.jpeg',
+        title: 'Rubber Mat Protection',
+        description: 'Rubber Mat Ceramic Protection'
+    },
+    {
+        src: 'images/Q8Rear.jpeg',
+        title: 'Paint Enhancement',
+        description: 'Professional correction results'
+    }
+];
+
+let currentModalIndex = 0;
+
+function openImageModal(imageSrc, title, description) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    
+    // Find the current image index
+    currentModalIndex = portfolioImages.findIndex(img => img.src === imageSrc);
+    
+    modalImage.src = imageSrc;
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function nextModalImage() {
+    currentModalIndex = (currentModalIndex + 1) % portfolioImages.length;
+    updateModalImage();
+}
+
+function previousModalImage() {
+    currentModalIndex = (currentModalIndex - 1 + portfolioImages.length) % portfolioImages.length;
+    updateModalImage();
+}
+
+function updateModalImage() {
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    
+    const currentImage = portfolioImages[currentModalIndex];
+    
+    modalImage.src = currentImage.src;
+    modalTitle.textContent = currentImage.title;
+    modalDescription.textContent = currentImage.description;
+}
+
+// Close modal when clicking outside image
+document.getElementById('imageModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeImageModal();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('imageModal');
+    if (modal.style.display === 'block') {
+        if (e.key === 'Escape') {
+            closeImageModal();
+        } else if (e.key === 'ArrowRight') {
+            nextModalImage();
+        } else if (e.key === 'ArrowLeft') {
+            previousModalImage();
+        }
+    }
+});
+</script>
 
     <!-- Testimonials Section - Compact -->
     <section class="testimonials">
