@@ -341,7 +341,7 @@ body {
     box-shadow: 0 8px 25px var(--shadow-luxury);
 }
 
-/* Portfolio Section - COMPLETE REPLACEMENT */
+/* Portfolio Section */
 .portfolio {
     padding: 8rem 0;
     background: var(--luxury-black);
@@ -359,7 +359,6 @@ body {
     border-radius: 15px;
     position: relative;
     height: 600px;
-    background: var(--luxury-charcoal);
 }
 
 .portfolio-slides {
@@ -370,26 +369,15 @@ body {
 
 .portfolio-slide {
     min-width: 100%;
-    max-width: 100%;
-    height: 100%;
     position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
+    height: 100%;
 }
 
 .portfolio-slide img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    max-width: none;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
-    display: block;
+    border-radius: 15px;
 }
 
 .portfolio-overlay {
@@ -400,7 +388,6 @@ body {
     background: linear-gradient(transparent, rgba(0,0,0,0.9));
     padding: 3rem 2rem 2rem;
     color: white;
-    z-index: 5;
 }
 
 .portfolio-title {
@@ -466,39 +453,6 @@ body {
 .portfolio-indicator.active {
     background: var(--luxury-gold);
     transform: scale(1.2);
-}
-
-/* Mobile responsive for portfolio */
-@media (max-width: 768px) {
-    .portfolio-container {
-        height: 400px;
-    }
-
-    .portfolio-nav-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
-
-    .portfolio-prev {
-        left: 15px;
-    }
-
-    .portfolio-next {
-        right: 15px;
-    }
-
-    .portfolio-overlay {
-        padding: 2rem 1.5rem 1.5rem;
-    }
-
-    .portfolio-title {
-        font-size: 1.4rem;
-    }
-
-    .portfolio-description {
-        font-size: 1rem;
-    }
 }
 
 /* Lamborghini Showcase */
