@@ -903,36 +903,35 @@
             }
         });
 
-        // Portfolio Gallery Functionality
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.portfolio-slide');
-        const indicators = document.querySelectorAll('.portfolio-indicator');
-        
-        function showSlide(index) {
-            if (index >= slides.length) currentSlideIndex = 0;
-            if (index < 0) currentSlideIndex = slides.length - 1;
-            
-            const slideContainer = document.querySelector('.portfolio-slides');
-            if (slideContainer) {
-                slideContainer.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-            }
-            
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === currentSlideIndex);
-            });
-        }
-        
-        function changeSlide(direction) {
-            currentSlideIndex += direction;
-            if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
-            if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
-            showSlide(currentSlideIndex);
-        }
-        
-        function currentSlide(index) {
-            currentSlideIndex = index - 1;
-            showSlide(currentSlideIndex);
-        }
+        // Portfolio Gallery Functionality - UPDATED
+		let currentSlideIndex = 0;
+		const slides = document.querySelectorAll('.portfolio-slide');
+		const indicators = document.querySelectorAll('.portfolio-indicator');
+
+		function showSlide(index) {
+			if (index >= slides.length) currentSlideIndex = 0;
+			if (index < 0) currentSlideIndex = slides.length - 1;
+			
+			slides.forEach((slide, i) => {
+				slide.classList.toggle('active', i === currentSlideIndex);
+			});
+			
+			indicators.forEach((indicator, i) => {
+				indicator.classList.toggle('active', i === currentSlideIndex);
+			});
+		}
+
+		function changeSlide(direction) {
+			currentSlideIndex += direction;
+			if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+			if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+			showSlide(currentSlideIndex);
+		}
+
+		function currentSlide(index) {
+			currentSlideIndex = index - 1;
+			showSlide(currentSlideIndex);
+		}
         
         // Auto-advance slides every 5 seconds
         if (slides.length > 0) {
