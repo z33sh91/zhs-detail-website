@@ -341,7 +341,7 @@ body {
     box-shadow: 0 8px 25px var(--shadow-luxury);
 }
 
-/* Portfolio Section - COMPLETE REPLACEMENT */
+/* Portfolio Section - EMERGENCY FIX */
 .portfolio {
     padding: 8rem 0;
     background: var(--luxury-black);
@@ -359,7 +359,6 @@ body {
     border-radius: 15px;
     position: relative;
     height: 600px;
-    background: var(--luxury-charcoal);
 }
 
 .portfolio-slides {
@@ -370,40 +369,17 @@ body {
 
 .portfolio-slide {
     min-width: 100%;
-    max-width: 100%;
-    height: 100%;
     position: relative;
-    overflow: hidden;
+    height: 100%;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--luxury-charcoal);
 }
 
 .portfolio-slide img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
-    border-radius: 0;
-}
-
-/* Special handling for problematic images */
-.portfolio-slide:nth-child(7) img,  /* Leather Protection */
-.portfolio-slide:nth-child(8) img {  /* Rubber Mat Protection */
-    object-fit: cover;
-    object-position: center;
-    transform: scale(1.1);
-}
-
-.portfolio-slide:nth-child(6) img {  /* BMW iX */
-    object-fit: cover;
-    object-position: center top;
 }
 
 .portfolio-overlay {
@@ -414,7 +390,6 @@ body {
     background: linear-gradient(transparent, rgba(0,0,0,0.9));
     padding: 3rem 2rem 2rem;
     color: white;
-    z-index: 5;
 }
 
 .portfolio-title {
@@ -482,7 +457,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Mobile responsive for portfolio */
+/* Mobile responsive */
 @media (max-width: 768px) {
     .portfolio-container {
         height: 400px;
@@ -512,12 +487,6 @@ body {
 
     .portfolio-description {
         font-size: 1rem;
-    }
-
-    /* Adjust scaling for mobile */
-    .portfolio-slide:nth-child(7) img,
-    .portfolio-slide:nth-child(8) img {
-        transform: scale(1.05);
     }
 }
 
