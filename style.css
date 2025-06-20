@@ -341,7 +341,7 @@ body {
     box-shadow: 0 8px 25px var(--shadow-luxury);
 }
 
-/* Portfolio Section - EMERGENCY FIX */
+/* Portfolio Section - COMPLETE RESTRUCTURE */
 .portfolio {
     padding: 8rem 0;
     background: var(--luxury-black);
@@ -355,31 +355,71 @@ body {
 }
 
 .portfolio-container {
-    overflow: hidden;
-    border-radius: 15px;
     position: relative;
     height: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--luxury-charcoal);
 }
 
 .portfolio-slides {
-    display: flex;
-    transition: transform 0.5s ease;
+    position: relative;
+    width: 100%;
     height: 100%;
 }
 
 .portfolio-slide {
-    min-width: 100%;
-    position: relative;
-    height: 100%;
-    flex-shrink: 0;
-}
-
-.portfolio-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.portfolio-slide.active {
+    opacity: 1;
+}
+
+/* Background images for each slide */
+.portfolio-slide:nth-child(1) {
+    background-image: url('images/Interior/PorscheSteeringWheel.jpeg');
+}
+
+.portfolio-slide:nth-child(2) {
+    background-image: url('images/Interior/RollsRoyce.jpeg');
+}
+
+.portfolio-slide:nth-child(3) {
+    background-image: url('images/Interior/Ferrari.jpeg');
+}
+
+.portfolio-slide:nth-child(4) {
+    background-image: url('images/CorvetteFront.jpeg');
+}
+
+.portfolio-slide:nth-child(5) {
+    background-image: url('images/lambo.jpeg');
+}
+
+.portfolio-slide:nth-child(6) {
+    background-image: url('images/Exterior/BMWiXFront.jpeg');
+}
+
+.portfolio-slide:nth-child(7) {
+    background-image: url('images/Interior/leatherProtection.jpeg');
+}
+
+.portfolio-slide:nth-child(8) {
+    background-image: url('images/Interior/RubberMatsCeramicCoatediX.jpeg');
+}
+
+.portfolio-slide:nth-child(9) {
+    background-image: url('images/Q8Rear.jpeg');
 }
 
 .portfolio-overlay {
@@ -390,6 +430,7 @@ body {
     background: linear-gradient(transparent, rgba(0,0,0,0.9));
     padding: 3rem 2rem 2rem;
     color: white;
+    z-index: 2;
 }
 
 .portfolio-title {
