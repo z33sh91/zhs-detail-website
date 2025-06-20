@@ -341,7 +341,7 @@ body {
     box-shadow: 0 8px 25px var(--shadow-luxury);
 }
 
-/* Portfolio Section */
+/* Portfolio Section - COMPLETE REPLACEMENT */
 .portfolio {
     padding: 8rem 0;
     background: var(--luxury-black);
@@ -370,21 +370,26 @@ body {
 
 .portfolio-slide {
     min-width: 100%;
-    position: relative;
+    max-width: 100%;
     height: 100%;
+    position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
 }
 
 .portfolio-slide img {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    max-width: none;
     object-fit: cover;
     object-position: center;
     display: block;
-    border-radius: 0;
 }
 
 .portfolio-overlay {
